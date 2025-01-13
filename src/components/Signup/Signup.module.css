@@ -124,4 +124,16 @@
     font-weight: 600;
     color: white;
     text-decoration: underline;
+
   }
+
+  .signUpLink span a:visited {
+    color: white;}
+
+    .signUpLink span a:active {
+        color: white;
+      }
+
+      .signUpLink span a:hover {
+        color: #d1d1d1; 
+      }
