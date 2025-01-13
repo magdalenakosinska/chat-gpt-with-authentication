@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import Login from './components/Login/Login.tsx'
+import Signup from './components/Signup/Signup.tsx'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/signup" element={<Signup />}/>
         <Route path="*" element={<Navigate to="/" />} />
 
       </Routes>
