@@ -5,9 +5,9 @@ function App() {
 
 
   return (
-    <div>
-  
-    </div>
+    <h1>
+      You're currently logged in.
+    </h1>
   )
 }
 
