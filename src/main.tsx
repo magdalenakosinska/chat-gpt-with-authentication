@@ -1,13 +1,10 @@
 import { StrictMode } from 'react'
-import dotenv from 'dotenv'
-
-dotenv.config()
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import Login from './components/Login/Login.tsx'
-import Signup from './components/Signup/Signup.tsx'
-import AuthRoute from './components/AuthRoute/AuthRoute.tsx'
+import Login from './components/Authentication/Login/Login.tsx'
+import Signup from './components/Authentication/Signup/Signup.tsx'
+import AuthRoute from './components/Authentication/AuthRoute/AuthRoute.tsx'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 
