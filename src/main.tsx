@@ -1,4 +1,7 @@
 import { StrictMode } from 'react'
+import dotenv from 'dotenv'
+
+dotenv.config()
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
@@ -9,15 +12,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB_xiV1PHXhxzk6wh3W-q_gY67wtnKXSK8",
-  authDomain: "chat-gpt-with-authentication.firebaseapp.com",
-  projectId: "chat-gpt-with-authentication",
-  storageBucket: "chat-gpt-with-authentication.firebasestorage.app",
-  messagingSenderId: "348351542265",
-  appId: "1:348351542265:web:b91b92c10aac3d9c83c328"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 initializeApp(firebaseConfig);
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
