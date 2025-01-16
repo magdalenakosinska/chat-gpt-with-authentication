@@ -1,6 +1,9 @@
 const PORT = 8000;
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const app = express();
 
@@ -8,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const API_KEY = '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';
+const API_KEY = process.env.API_KEY;
 app.post('/completions', async (req, res) => {
   const options = {
     method: 'POST',
@@ -18,8 +21,8 @@ app.post('/completions', async (req, res) => {
     },
     body: JSON.stringify({
       model: "gpt-4o-mini",
-      messages: [{role:"user", content: "how are you?"}],
-      max_tokens:40
+      messages: req.body.messages,
+      max_tokens:100
     })
   };
   try {
